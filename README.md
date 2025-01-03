@@ -1,11 +1,11 @@
-# streamlit-custom-component
+# Streamlit-Mathlive-Editor
 
-A 
+A WYSWYG math expression editor for Streamlit using Mathlive mathfield and on-screen keyboard
 
 ## Installation instructions
 
 ```sh
-pip install streamlit
+pip install streamlit-mathlive-editor
 ```
 
 ## Usage instructions
@@ -13,9 +13,10 @@ pip install streamlit
 ```python
 import streamlit as st
 
-from my_component import my_component
+from streamlit_mathlive_editor import mathfield
 
-value = my_component()
+MathML, Tex = mathfield(title="Equation 1", value=r"\frac{1}{2} \times 5",)
 
-st.write(value)
+st.write(MathML)
+st.write(Tex)
 ```
