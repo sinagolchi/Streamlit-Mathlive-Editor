@@ -1,6 +1,7 @@
 # Streamlit-Mathlive-Editor
 
-A WYSWYG math expression editor for Streamlit using Mathlive mathfield and on-screen keyboard
+A WYSWYG math expression editor for Streamlit using Mathlive math field and on-screen keyboard.
+Additionally, the component returns the MathML expression of the mathematical expression in the field using MathJaX. 
 
 ## Installation instructions
 
@@ -17,6 +18,7 @@ from streamlit_mathlive_editor import mathfield
 
 Tex, MathMl = mathfield(title="Equation 1", value=r"\frac{1}{2} \times 5",)
 
+st.latex(Tex)
 st.write(MathML)
-st.write(Tex)
+
 ```
