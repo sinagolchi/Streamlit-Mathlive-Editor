@@ -23,7 +23,7 @@ if not _RELEASE:
         # We give the component a simple, descriptive name ("my_component"
         # does not fit this bill, so please choose something better for your
         # own component :)
-        "math_box",
+        "streamlit_mathlive_editor",
         # Pass `url` here to tell Streamlit that the component will be served
         # by the local dev server that you run via `npm run start`.
         # (This is useful while your component is in development.)
@@ -43,7 +43,7 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def mathfield(title="Eqn", value="3+2", enable_edit=True, upright=True, key=None):
+def mathfield(title="Eqn", value="3+2", enable_edit=True, upright=True, mathml_preview=False, key=None):
     """Create a new instance of "math_box".
 
     Parameters
@@ -70,7 +70,7 @@ def mathfield(title="Eqn", value="3+2", enable_edit=True, upright=True, key=None
     #
     # "default" is a special argument that specifies the initial return
     # value of the component before the user has interacted with it.
-    component_value = _component_func(title=title, value=value, edit=enable_edit, upright=upright, key=key, default=[None, None])
+    component_value = _component_func(title=title, value=value, edit=enable_edit, upright=upright, mathml_preview=True, key=key, default=[None, None])
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.

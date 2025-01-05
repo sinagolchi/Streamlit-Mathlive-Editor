@@ -15,7 +15,7 @@ import streamlit as st
 
 from streamlit_mathlive_editor import mathfield
 
-MathML, Tex = mathfield(title="Equation 1", value=r"\frac{1}{2} \times 5",)
+Tex, MathMl = mathfield(title="Equation 1", value=r"\frac{1}{2} \times 5",)
 
 st.write(MathML)
 st.write(Tex)

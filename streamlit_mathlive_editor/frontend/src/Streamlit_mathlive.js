@@ -81,27 +81,32 @@ class Streamlit_mathlive extends StreamlitComponentBase {
   render() {
 	if (this.props.args['edit']) {
     return (
-      <div className='App'>
-        <h2>{this.props.args['title']}</h2>
-        <math-field ref={this.mf} onInput={(evt) => {this.change_val(evt)}}>
-          {this.state.value}
-        </math-field>
-		
-		<div class="form-check">
-		  <input class="form-check-input" type="checkbox" onChange={()=> this.handle_check()} checked={this.state.upright} id="upright1"/>
-		  <label class="form-check-label" for="upright1">
-			Upright equation
-		  </label>
-		</div>
-		<h4>{this.state.upright}</h4>
-        <div class="h-100 p-2 bg-body-tertiary border rounded-3">{this.state.tex}</div>
-		<h5>Render preview of MathML</h5>
-        <h2 dangerouslySetInnerHTML={{ __html: this.state.mathml }} />
-		<break/>
-      </div>
+        <div className='App'>
+            <h2>{this.props.args['title']}</h2>
+            <math-field ref={this.mf} onInput={(evt) => {
+                this.change_val(evt)
+            }}>
+                {this.state.value}
+            </math-field>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" onChange={() => this.handle_check()}
+                       checked={this.state.upright} id="upright1"/>
+                <label class="form-check-label" for="upright1">
+                    Upright equation
+                </label>
+            </div>
+            <h4>{this.state.upright}</h4>
+            {this.props.args['mathml_preview'] ? (
+            <div>
+            <h5>Render preview of MathML</h5>
+            <h2 dangerouslySetInnerHTML={{__html: this.state.mathml}}/>
+            </div>):(<div></div>)}
+            <break/>
+        </div>
     )
-  } else {
-	  return(<div></div>)
+    } else {
+        return (<div></div>)
   }
   }
 }
