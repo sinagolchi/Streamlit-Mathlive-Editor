@@ -6,14 +6,14 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
-    name="streamlit-custom-component",
+    name="streamlit-mathlive-editor",
     version="0.0.1",
-    author="John Smith",
-    author_email="john@example.com",
-    description="Streamlit component that allows you to do X",
+    author="Sina Golchi",
+    author_email="sinagolchi@gmail.com",
+    description="A WYSWYG math expression editor for Streamlit using Mathlive math field and on-screen keyboard.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/sinagolchi/Streamlit-Mathlive-Editor",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],
