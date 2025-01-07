@@ -6,15 +6,14 @@ Additionally, the component returns the MathML expression of the mathematical ex
 ## Installation instructions
 
 ```sh
-pip install streamlit-mathlive-editor
+pip install streamlit-mathlive
 ```
 
 ## Usage instructions
 
 ```python
 import streamlit as st
-
-from streamlit_mathlive_editor import mathfield
+from st_mathlive import mathfield
 
 Tex, MathML = mathfield(title="Equation 1", value=r"\frac{1}{2} \times 5",)
 

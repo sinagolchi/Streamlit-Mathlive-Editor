@@ -1,1 +1,1 @@
-recursive-include streamlit-mathlive-editor/frontend/build *
+recursive-include st_mathlive/frontend/build *
